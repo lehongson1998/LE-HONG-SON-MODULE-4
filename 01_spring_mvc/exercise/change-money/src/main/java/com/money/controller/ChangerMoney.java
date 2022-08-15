@@ -14,9 +14,12 @@ public class ChangerMoney {
     @GetMapping("/result")
     public String changerMoney(@RequestParam int usd, Model model){
         final int RATE = 23000;
-        model.addAttribute("usd", usd);
-        int vnd = usd * RATE;
-        model.addAttribute("vnd", vnd);
+        try {
+            int vnd = usd * RATE;
+            model.addAttribute("vnd", vnd);
+        }catch (NumberFormatException n){
+            model.addAttribute("vnd", "null");
+        }
         return "/result";
     }
 }
