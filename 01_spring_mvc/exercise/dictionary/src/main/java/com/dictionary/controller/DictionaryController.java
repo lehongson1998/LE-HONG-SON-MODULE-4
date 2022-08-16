@@ -1,6 +1,7 @@
 package com.dictionary.controller;
 
-import com.dictionary.service.IChanger;
+import com.dictionary.repository.IChangerRepository;
+import com.dictionary.service.IChangerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class DictionaryController {
     @Autowired
-    private IChanger iChanger;
+    private IChangerService iChangerService;
 
     @GetMapping(value = "/")
     public String getFormDictionary(){
@@ -20,7 +21,7 @@ public class DictionaryController {
 
     @PostMapping("/vietnamesse")
     public String changerLanguage(@RequestParam String eng, Model model){
-        String result = this.iChanger.changer(eng);
+        String result = this.iChangerService.changer(eng);
         if (result != null){
             model.addAttribute("result", result);
         }else {
