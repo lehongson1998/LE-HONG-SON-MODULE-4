@@ -1,5 +1,6 @@
 package com.calculator.controller;
 
+import com.calculator.exception.MyException;
 import com.calculator.service.ICalculatorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -32,6 +33,8 @@ public class CalculatorController {
                             operator));
         }catch (NumberFormatException n){
             model.addAttribute("result","please enter number");
+        }catch (MyException m){
+            model.addAttribute("result", m.getMessage());
         }
         model.addAttribute("number1", number1);
         model.addAttribute("number2", number2);
