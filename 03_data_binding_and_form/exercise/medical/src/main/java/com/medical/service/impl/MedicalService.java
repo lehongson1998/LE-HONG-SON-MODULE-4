@@ -51,4 +51,14 @@ public class MedicalService implements IMedicalService {
     public List<Person> display() {
         return this.iMedicalRepository.display();
     }
+
+    @Override
+    public void edit(Person person) {
+        this.iMedicalRepository.edit(person);
+    }
+
+    @Override
+    public Person findByIdCard(String idCard) {
+        return this.iMedicalRepository.findByIdCard(idCard);
+    }
 }

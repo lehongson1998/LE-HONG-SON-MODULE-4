@@ -82,4 +82,36 @@ public class MedicalRepository implements IMedicalRepository {
     public List<Person> display() {
         return personList;
     }
+
+    @Override
+    public void edit(Person person) {
+        for (int i = 0; i < personList.size(); i++) {
+            if (person.getIdCard().equals(personList.get(i).getIdCard())){
+                personList.get(i).setName(person.getName());
+                personList.get(i).setDateOfBirth(person.getDateOfBirth());
+                personList.get(i).setGender(person.getGender());
+                personList.get(i).setCountry(person.getCountry());
+                personList.get(i).setTravelInformation(person.getTravelInformation());
+                personList.get(i).setVehicleNumber(person.getVehicleNumber());
+                personList.get(i).setSeats(person.getSeats());
+                personList.get(i).setStartDay(person.getStartDay());
+                personList.get(i).setStartMonth(person.getStartMonth());
+                personList.get(i).setStartYear(person.getStartYear());
+                personList.get(i).setEndDay(person.getEndDay());
+                personList.get(i).setEndMonth(person.getEndMonth());
+                personList.get(i).setEndYear(person.getEndYear());
+                personList.get(i).setDescription(person.getDescription());
+            }
+        }
+    }
+
+    @Override
+    public Person findByIdCard(String idCard) {
+        for(Person p: personList){
+            if (p.getIdCard().equals(idCard)){
+                return p;
+            }
+        }
+        return null;
+    }
 }

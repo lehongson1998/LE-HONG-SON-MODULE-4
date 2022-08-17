@@ -21,5 +21,10 @@ public interface IMedicalService {
 
     List<Person> display();
 
+    void edit(Person person);
+
+    Person findByIdCard(String idCard);
+
+
 
 }
