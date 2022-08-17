@@ -21,7 +21,6 @@ public class CalculatorService implements ICalculatorService {
                 break;
             case "/":
                 if (number2 != 0) {
-
                     result = number1 / number2;
                 } else {
                     throw new MyException("can not division by/zero");
