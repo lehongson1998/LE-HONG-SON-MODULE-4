@@ -1,5 +1,6 @@
 package com.medical.service.impl;
 
+import com.medical.model.Person;
 import com.medical.repository.IMedicalRepository;
 import com.medical.service.IMedicalService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,5 +40,15 @@ public class MedicalService implements IMedicalService {
     @Override
     public List<String> travelInformation() {
         return this.iMedicalRepository.travelInformation();
+    }
+
+    @Override
+    public void save(Person person) {
+        this.iMedicalRepository.save(person);
+    }
+
+    @Override
+    public List<Person> display() {
+        return this.iMedicalRepository.display();
     }
 }

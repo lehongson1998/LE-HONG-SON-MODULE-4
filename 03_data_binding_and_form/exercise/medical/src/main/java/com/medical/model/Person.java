@@ -1,7 +1,5 @@
 package com.medical.model;
 
-import java.util.List;
-
 public class Person {
     private String name;
     private String dateOfBirth;

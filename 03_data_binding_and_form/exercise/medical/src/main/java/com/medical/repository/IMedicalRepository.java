@@ -11,4 +11,6 @@ public interface IMedicalRepository {
     List<String> gender();
     List<String> country();
     List<String> travelInformation();
+    void save(Person person);
+    List<Person> display();
 }

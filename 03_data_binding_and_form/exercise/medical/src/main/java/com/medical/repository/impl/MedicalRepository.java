@@ -14,7 +14,7 @@ public class MedicalRepository implements IMedicalRepository {
     private static List<String> monthList = new ArrayList<>();
     private static List<String> countryList = new ArrayList<>();
     private static List<String> travelList = new ArrayList<>();
-    private static Person person;
+    private static List<Person> personList = new ArrayList<>();
     static {
         for (int i = 1922; i < 2022; i++) {
             yearList.add(String.valueOf(i));
@@ -71,5 +71,15 @@ public class MedicalRepository implements IMedicalRepository {
     @Override
     public List<String> travelInformation() {
         return travelList;
+    }
+
+    @Override
+    public void save(Person person) {
+        personList.add(person);
+    }
+
+    @Override
+    public List<Person> display() {
+        return personList;
     }
 }

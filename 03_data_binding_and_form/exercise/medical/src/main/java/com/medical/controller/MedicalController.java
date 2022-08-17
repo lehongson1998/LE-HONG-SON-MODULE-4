@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class MedicalController {
@@ -27,9 +28,16 @@ public class MedicalController {
         return "medical/show_form";
     }
 
-    @PostMapping(value = "/add")
+    @PostMapping("/add")
     public String createMedical(@ModelAttribute("person") Person person, Model model){
-        model.addAttribute("personMedical", person);
+        this.iMedicalService.save(person);
+        model.addAttribute("personMedical", this.iMedicalService.display());
+        return "medical/medical_show";
+    }
+
+    @GetMapping("/view")
+    public String displayMedical(Model model){
+        model.addAttribute("personMedical", this.iMedicalService.display());
         return "medical/medical_show";
     }
 }
