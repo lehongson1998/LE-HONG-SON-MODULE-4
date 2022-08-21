@@ -1,4 +1,4 @@
-package com.example;
+package com.music_library.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 

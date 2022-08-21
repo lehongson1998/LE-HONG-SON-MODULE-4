@@ -1,4 +1,4 @@
-package com.music_library.repository;
+package com.music_library.repository.impl;
 
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;

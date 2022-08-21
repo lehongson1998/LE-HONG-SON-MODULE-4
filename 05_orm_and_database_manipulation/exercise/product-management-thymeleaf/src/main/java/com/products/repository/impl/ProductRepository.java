@@ -50,6 +50,7 @@ public class ProductRepository implements IProductRepository {
     @Override
     public List<Product> findProductByName(String name) {
         TypedQuery typedQuery = BaseRepository.entityManager.createQuery("select p from Product p where p.name like :name", Product.class);
+        typedQuery.setParameter("name", name);
         return typedQuery.getResultList();
     }
 }
