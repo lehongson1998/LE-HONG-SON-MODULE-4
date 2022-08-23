@@ -3,6 +3,7 @@ package com.products.controller;
 import com.products.model.Product;
 import com.products.service.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +14,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class ProductController {
 
     @Autowired
+    @Qualifier(value = "productService")
     private IProductService iProductService;
 
     @GetMapping("")
