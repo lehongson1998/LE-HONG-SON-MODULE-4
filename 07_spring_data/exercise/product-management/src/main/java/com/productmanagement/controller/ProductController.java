@@ -26,6 +26,7 @@ public class ProductController {
                               @PageableDefault(size = 4)Pageable pageable) {
         String keyName = name.orElse("");
         model.addAttribute("productList", this.iProductService.displayAll(keyName, pageable));
+        model.addAttribute("keyName", keyName);
         return "/product/list";
     }
 
