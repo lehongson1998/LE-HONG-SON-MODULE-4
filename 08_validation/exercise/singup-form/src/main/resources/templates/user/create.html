@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/create" method="post" th:object="${userDto}">
+    <label>firstname</label>
+    <input type="text" th:field="*{firstName}">
+    <span th:errors="*{firstName}"></span>
+    <label>last name</label>
+    <input type="text" th:field="*{lastName}">
+    <span th:errors="*{lastName}"></span>
+    <label>phone number</label>
+    <input type="text" th:field="*{phoneNumber}">
+    <span th:errors="*{phoneNumber}"></span>
+    <label>age</label>
+    <input type="date" th:field="*{age}">
+    <span th:errors="*{age}"></span>
+    <label>email</label>
+    <input type="text" th:field="*{email}">
+    <span th:errors="*{email}"></span>
+    <input type="submit" value="save">
+</form>
+
+</body>
+</html>
