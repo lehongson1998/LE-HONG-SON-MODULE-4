@@ -1,10 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/bootstrap.min.js"></script>
 </head>
 <body>
-$END$
+<div class="container mt-4">
+    <div class="row w-50 mx-auto">
+        <div class="col-lg-12">
+            <h2>Edit student</h2>
+            <form action="/edit" method="post" th:object="${songDto}">
+                <div class="form-outline mb-4">
+                    <label class="form-label">id</label>
+                    <input type="text" readonly th:field="*{id}" class="form-control" />
+                </div>
+
+                <div class="form-outline mb-4">
+                    <label class="form-label">Song name</label>
+                    <input type="text" th:field="*{songName}" class="form-control" />
+                </div>
+                <div class="mb-4 text-danger" th:errors="*{songName}">
+                </div>
+                <div class="form-outline mb-4">
+                    <label class="form-label">Single name</label>
+                    <input type="text" th:field="*{singleName}" class="form-control" />
+                </div>
+                <div class="mb-4 text-danger" th:errors="*{singleName}">
+                </div>
+                <div class="form-outline mb-4">
+                    <label class="form-label">Category</label>
+                    <input type="text" th:field="*{category}" class="form-control" />
+                </div>
+                <div class="mb-4 text-danger" th:errors="*{category}">
+                </div>
+                <button id="btnCreate" type="submit" class="btn btn-primary btn-block">
+                    Edit
+                </button>
+                <a class="btn btn-danger btn-block" href="/list">Back</a>
+            </form>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
