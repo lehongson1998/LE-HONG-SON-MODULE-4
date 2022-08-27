@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>customer</title>
+    <th:block th:replace="~{/layout/home :: cssScript}"></th:block>
+</head>
+<body>
+<nav th:replace="~{/layout/header_footer::header}"></nav>
+<div th:replace="~{/layout/home::carousel}"></div>
+<div class="container">
+    <table class="table table-dark">
+        <tr>
+            <th>STT</th>
+            <th>Họ tên</th>
+            <th>Ngày sinh</th>
+            <th>Giới tính  </th>
+            <th>Số CMND </th>
+            <th>Số Điện Thoại</th>
+            <th>Email </th>
+            <th>Loại khách</th>
+            <th>Địa chỉ </th>
+            <th></th>
+        </tr>
+    </table>
+</div>
+<footer th:replace="/layout/header_footer::footer"></footer>
+</body>
+</html>
