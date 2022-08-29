@@ -1,9 +1,8 @@
 package com.case_study.controlleer;
 
 import com.case_study.dto.CustomerDto;
-import com.case_study.dto.TypeCustomerDto;
-import com.case_study.model.Customer;
-import com.case_study.model.TypeCustomer;
+import com.case_study.model.customer.Customer;
+import com.case_study.model.customer.TypeCustomer;
 import com.case_study.service.ICustomerService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;

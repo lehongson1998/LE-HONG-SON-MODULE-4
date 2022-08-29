@@ -44,7 +44,7 @@
                     <span class="fa fa-edit fa-1x text-warning"></span>
                 </a>
                 <button type="button" class="btn border-0" th:onclick="|deleteCustomer(${customer.id})|" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <span class="fa fa-remove text-danger fa-1x"></span>
+                    <span class="fa fa fa-backspace text-danger fa-1x"></span>
                 </button>
             </td>
         </tr>
@@ -69,14 +69,14 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Delete customer</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <input type="text" readonly class="form-control border-0" id="deleteId" name="id">
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn border-0" data-bs-dismiss="modal"><i class="fa fa-backward"></i> </button>
+                        <button type="button" class="btn border-0" data-bs-dismiss="modal"><i class="fa fa-rotate-left text-success"></i> </button>
                         <button type="submit" class="btn border-0"><i class="fa fa-trash text-danger"></i> </button>
                     </div>
                 </div>

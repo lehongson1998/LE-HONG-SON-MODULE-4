@@ -1,13 +1,13 @@
 package com.case_study.model;
 
-import com.case_study.dto.TypeCustomerDto;
-
-import javax.persistence.*;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 import java.time.LocalDate;
 
-@Entity
-@Table(name = "customer")
-public class Customer {
+@MappedSuperclass
+public abstract class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
@@ -17,26 +17,8 @@ public class Customer {
     private String phoneNumber;
     private String email;
     private String address;
-    private boolean gender;
-    @ManyToOne
-    @JoinColumn(name = "type_customer_id", referencedColumnName = "typeCustomerId", nullable = false)
-    private TypeCustomer typeCustomer;
 
-    public Customer() {
-    }
-
-    public Customer(String name, LocalDate dateOfBirth, String idCard, String phoneNumber, String email, String address, boolean gender, TypeCustomer typeCustomer) {
-        this.name = name;
-        this.dateOfBirth = dateOfBirth;
-        this.idCard = idCard;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-        this.address = address;
-        this.gender = gender;
-        this.typeCustomer = typeCustomer;
-    }
-
-    public Customer(Long id, String name, LocalDate dateOfBirth, String idCard, String phoneNumber, String email, String address, boolean gender, TypeCustomer typeCustomer) {
+    public Person(Long id, String name, LocalDate dateOfBirth, String idCard, String phoneNumber, String email, String address) {
         Id = id;
         this.name = name;
         this.dateOfBirth = dateOfBirth;
@@ -44,8 +26,18 @@ public class Customer {
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.address = address;
-        this.gender = gender;
-        this.typeCustomer = typeCustomer;
+    }
+
+    public Person() {
+    }
+
+    public Person(String name, LocalDate dateOfBirth, String idCard, String phoneNumber, String email, String address) {
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
+        this.idCard = idCard;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.address = address;
     }
 
     public Long getId() {
@@ -103,21 +95,4 @@ public class Customer {
     public void setAddress(String address) {
         this.address = address;
     }
-
-    public boolean isGender() {
-        return gender;
-    }
-
-    public void setGender(boolean gender) {
-        this.gender = gender;
-    }
-
-    public TypeCustomer getTypeCustomer() {
-        return typeCustomer;
-    }
-
-    public void setTypeCustomer(TypeCustomer typeCustomer) {
-        this.typeCustomer = typeCustomer;
-    }
-
 }

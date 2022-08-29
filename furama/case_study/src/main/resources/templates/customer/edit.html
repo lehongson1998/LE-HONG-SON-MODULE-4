@@ -9,7 +9,7 @@
 <nav th:replace="~{/layout/header_footer::header}"></nav>
 <div th:replace="~{/layout/home::carousel}"></div>
 <div class="container w-50 mt-4 p-2 mb-4" style="border: 1px solid grey; border-radius: 15px">
-    <h3 align="center" class="text-info">Add new Customer</h3>
+    <h3 align="center" class="text-info">Edit Customer</h3>
     <form class="row g-3" action="/customer/edit" method="post" th:object="${customerDto}">
         <div class="col-md-12">
             <label for="cId" class="form-label">Id</label>
