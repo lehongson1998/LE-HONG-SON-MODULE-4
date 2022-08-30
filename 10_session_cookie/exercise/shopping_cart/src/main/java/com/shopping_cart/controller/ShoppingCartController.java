@@ -34,8 +34,10 @@ public class ShoppingCartController {
 
     @PostMapping(value = "/pay")
     public String pay(@RequestParam Float payInput,
+                      @SessionAttribute("cart") Cart cart,
                       Model model) {
         model.addAttribute("totalPayment", payInput);
+        cart.getProducts().clear();
         return "payment";
     }
 }
