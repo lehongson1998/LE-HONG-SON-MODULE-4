@@ -1,4 +1,4 @@
-package com.case_study.dto;
+package com.case_study.dto.customer;
 
 public class TypeCustomerDto {
     private Long id;

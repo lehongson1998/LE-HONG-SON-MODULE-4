@@ -1,14 +1,12 @@
 package com.case_study.model.employee;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
 public class Position {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long positionId;
     private String positionName;
     @OneToMany(mappedBy = "position", cascade = CascadeType.ALL)

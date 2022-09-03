@@ -1,4 +1,4 @@
-package com.case_study.dto;
+package com.case_study.dto.customer;
 
 import org.springframework.format.annotation.DateTimeFormat;
 

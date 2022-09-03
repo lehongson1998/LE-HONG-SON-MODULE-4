@@ -1,13 +1,9 @@
-package com.case_study.dto;
+package com.case_study.dto.customer;
 
 import com.case_study.until.RegexCustomer;
-import com.case_study.until.VnCharacterUnit;
-import net.bytebuddy.implementation.bind.annotation.Empty;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
 import java.time.LocalDate;
 
 public class CustomerDto extends PersonDto implements Validator {

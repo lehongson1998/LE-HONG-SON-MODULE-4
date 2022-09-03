@@ -1,6 +1,6 @@
 package com.case_study.until;
 
-import com.case_study.dto.CustomerDto;
+import com.case_study.dto.customer.CustomerDto;
 
 import java.time.LocalDate;
 

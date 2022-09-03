@@ -1,13 +1,19 @@
 package com.case_study.model.employee;
 
 import com.case_study.model.Person;
+import com.case_study.model.contract.Contract;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
+@NoArgsConstructor
+@Getter
+@Setter
 public class Employee extends Person {
     private double salary;
     @ManyToOne
@@ -19,55 +25,24 @@ public class Employee extends Person {
     @ManyToOne
     @JoinColumn(name = "division_id", referencedColumnName = "divisionId")
     private Division division;
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL)
+    private List<Contract> contractList;
 
-    public Employee() {
-    }
-
-    public Employee(Long id, String name, LocalDate dateOfBirth, String idCard, String phoneNumber, String email, String address, double salary, Position position, EducationDegree educationDegree, Division division) {
-        super(id, name, dateOfBirth, idCard, phoneNumber, email, address);
+    public Employee(Long Id, String name, LocalDate dateOfBirth, String idCard, String phoneNumber, String email, String address, double salary, Position position, EducationDegree educationDegree, Division division, List<Contract> contractList) {
+        super(Id, name, dateOfBirth, idCard, phoneNumber, email, address);
         this.salary = salary;
         this.position = position;
         this.educationDegree = educationDegree;
         this.division = division;
+        this.contractList = contractList;
     }
 
-    public Employee(String name, LocalDate dateOfBirth, String idCard, String phoneNumber, String email, String address, double salary, Position position, EducationDegree educationDegree, Division division) {
+    public Employee(String name, LocalDate dateOfBirth, String idCard, String phoneNumber, String email, String address, double salary, Position position, EducationDegree educationDegree, Division division, List<Contract> contractList) {
         super(name, dateOfBirth, idCard, phoneNumber, email, address);
         this.salary = salary;
         this.position = position;
         this.educationDegree = educationDegree;
         this.division = division;
-    }
-
-    public double getSalary() {
-        return salary;
-    }
-
-    public void setSalary(double salary) {
-        this.salary = salary;
-    }
-
-    public Position getPosition() {
-        return position;
-    }
-
-    public void setPosition(Position position) {
-        this.position = position;
-    }
-
-    public EducationDegree getEducationDegree() {
-        return educationDegree;
-    }
-
-    public void setEducationDegree(EducationDegree educationDegree) {
-        this.educationDegree = educationDegree;
-    }
-
-    public Division getDivision() {
-        return division;
-    }
-
-    public void setDivision(Division division) {
-        this.division = division;
+        this.contractList = contractList;
     }
 }

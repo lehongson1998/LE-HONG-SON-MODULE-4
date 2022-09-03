@@ -1,6 +1,6 @@
 package com.case_study.controlleer;
 
-import com.case_study.dto.CustomerDto;
+import com.case_study.dto.customer.CustomerDto;
 import com.case_study.model.customer.Customer;
 import com.case_study.model.customer.TypeCustomer;
 import com.case_study.service.ICustomerService;
