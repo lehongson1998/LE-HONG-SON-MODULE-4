@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>list</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery-3.6.1.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center">List Blogs</h1>
+    <form>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" aria-describedby="button-addon2" name="name" id="name">
+        </div>
+        <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Button</button>
+    </form>
+    <table class="table table-active">
+        <tr>
+            <th>#</th>
+            <th>Id</th>
+            <th>Blog Name</th>
+            <th>Author Name</th>
+            <th>Category Name</th>
+            <th>Action</th>
+        </tr>
+        <tbody id="bodyBlog">
+
+        </tbody>
+    </table>
+    <button type="button" class="btn btn-info" id="load">Tải thêm</button>
+</div>
+<script>
+    ajax(0,"");
+    let size = 5;
+
+    function ajax(pageNumber, nameBlog, size){
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:8080/api/blogs/list?pageable=" + pageNumber + "&name=" + nameBlog + "&size=" + size,
+            success: function(blogPage){
+                console.log(blogPage);
+                let blogList = blogPage.content;
+                console.log(blogList);
+                let htmlStr = '';
+
+                for (let i = 0; i < blogList.length; i++) {
+                    htmlStr += `<tr>
+                        <td>${i + 1}</td>
+                        <td>${blogList[i].id}</td>
+                        <td>${blogList[i].blogName}</td>
+                        <td>${blogList[i].authorName}</td>
+                        <td>${blogList[i].category.categoryName}</td>
+
+                        <td>
+                            <a href="#">Update</a>
+                        </td>
+                    </tr>`;
+                }
+
+                $("#bodyBlog").html(htmlStr);
+                console.log(htmlStr);
+            },
+            error: function(resultError) {
+
+            }
+        });
+    }
+
+
+    $("#button-addon2").click(function () {
+        let name = $("#name").val();
+        ajax(0, name);
+    });
+
+    $("#load").click(function () {
+        size += 5;
+        ajax(0, "", size);
+    });
+
+</script>
+</body>
+</html>

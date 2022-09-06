@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a13f3c09-aa88-47f1-be3e-8e3869e126d9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../phone_management/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../phone_management/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../phone_management/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../phone_management/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../phone_management/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../phone_management/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../phone_management/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../phone_management/src/main/java/com/phone_management/PhoneManagementApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../phone_management/src/main/java/com/phone_management/controller/restfull/SmartPhoneRestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../phone_management/src/main/java/com/phone_management/model/SmartPhone.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../phone_management/src/main/java/com/phone_management/repository/ISmartPhoneRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../phone_management/src/main/java/com/phone_management/service/ISmartPhoneService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../phone_management/src/main/java/com/phone_management/service/impl/SmartPhoneService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../phone_management/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../phone_management/src/test/java/com/phone_management/PhoneManagementApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../views/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../views/.idea/blog_views.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../views/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../views/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../views/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../views/blog/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../views/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../views/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../views/js/jquery-3.6.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../views/smartphone/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../03_data_binding_and_form/pratice/spring-upload-file" beforeDir="false" afterPath="$PROJECT_DIR$/../../../03_data_binding_and_form/pratice/spring-upload-file" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../05_orm_and_database_manipulation/pratice/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../05_orm_and_database_manipulation/pratice/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../09_aop_and_exception_handling/pratice/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../09_aop_and_exception_handling/pratice/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../furama/case_study/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/case_study/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../furama/case_study/src/main/java/com/case_study/controlleer/ContractController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/case_study/src/main/java/com/case_study/controlleer/ContractController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../furama/case_study/src/main/java/com/case_study/repository/IContractRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/case_study/src/main/java/com/case_study/repository/IContractRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../furama/case_study/src/main/java/com/case_study/service/IContractService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/case_study/src/main/java/com/case_study/service/IContractService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../furama/case_study/src/main/java/com/case_study/service/impl/ContractService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/case_study/src/main/java/com/case_study/service/impl/ContractService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../furama/case_study/src/main/resources/templates/contract/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/case_study/src/main/resources/templates/contract/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../furama/case_study/src/main/resources/templates/customer/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/case_study/src/main/resources/templates/customer/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../furama/case_study/src/main/resources/templates/layout/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../furama/case_study/src/main/resources/templates/layout/home.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="2ENTvARfRDQdpRqcUE6EocdNbos" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../views" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\module_4\12_jquery_ajax\exercise\blog_views\js" />
+      <recent name="D:\module_4\12_jquery_ajax\exercise\blog_views\css" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a13f3c09-aa88-47f1-be3e-8e3869e126d9" name="Default Changelist" comment="" />
+      <created>1662435269656</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1662435269656</updated>
+      <workItem from="1662435270868" duration="5059000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="518" y="146" key="FileChooserDialogImpl" timestamp="1662442400706">
+      <screen x="0" y="0" width="1475" height="782" />
+    </state>
+    <state x="518" y="146" key="FileChooserDialogImpl/0.0.1475.782@0.0.1475.782" timestamp="1662442400706" />
+    <state x="400" y="103" width="672" height="678" key="search.everywhere.popup" timestamp="1662435528194">
+      <screen x="0" y="0" width="1475" height="782" />
+    </state>
+    <state x="400" y="103" width="672" height="678" key="search.everywhere.popup/0.0.1475.782@0.0.1475.782" timestamp="1662435528194" />
+  </component>
+</project>
