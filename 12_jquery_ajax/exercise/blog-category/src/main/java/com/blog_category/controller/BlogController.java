@@ -16,7 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.Optional;
 
 @Controller
-@RequestMapping("")
+@RequestMapping("/blogs")
 public class BlogController {
     @Autowired
     private IBlogService blogService;
@@ -52,7 +52,7 @@ public class BlogController {
         return modelAndView;
     }
 
-    @PostMapping("create")
+    @PostMapping("/create")
     public ModelAndView createBlog(@ModelAttribute Blog blog){
         ModelAndView modelAndView = new ModelAndView("/blog/create");
         blogService.save(blog);

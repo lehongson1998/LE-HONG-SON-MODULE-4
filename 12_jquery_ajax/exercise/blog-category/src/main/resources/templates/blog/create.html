@@ -9,7 +9,7 @@
 <body>
 <div class="container">
     <h1>New Blog</h1>
-    <form action="/create" th:object="${blog}" method="post">
+    <form action="/blogs/create" th:object="${blog}" method="post">
         <label>Category</label>
         <div >
             <select th:field="*{category}" >
@@ -26,7 +26,7 @@
         <label>Blog content</label>
         <textarea rows="9" cols="70" th:field="*{blogContent}" class="form-control"></textarea>
         <button class="btn btn-success" type="submit">Create</button>
-        <a class="btn btn-primary" href="/list">Back</a>
+        <a class="btn btn-primary" href="/blogs/list">Back</a>
     </form>
 </div>
 </body>

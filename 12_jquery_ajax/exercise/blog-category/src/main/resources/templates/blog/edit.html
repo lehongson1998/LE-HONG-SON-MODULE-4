@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="container" style="margin: auto">
-    <form action="/edit" method="post" th:object="${blog}">
+    <form action="/blogs/edit" method="post" th:object="${blog}">
         <div >
             <select th:field="*{category}" >
                 <option th:each="categorys : ${category}"
