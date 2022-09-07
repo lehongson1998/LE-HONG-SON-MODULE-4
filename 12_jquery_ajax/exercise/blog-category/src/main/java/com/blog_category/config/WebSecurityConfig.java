@@ -19,8 +19,6 @@ import javax.sql.DataSource;
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    private AppConfig appConfig = new AppConfig();
-
     @Autowired
     private UserDetailServiceImpl userDetailsService;
 
@@ -33,14 +31,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return bCryptPasswordEncoder;
     }
 
-    @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-
-        // Sét đặt dịch vụ để tìm kiếm User trong Database.
-        // Và sét đặt PasswordEncoder.
-        auth.userDetailsService(userDetailsService).passwordEncoder(appConfig.passwordEncoder());
-
-    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -48,11 +38,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
 
         // Các trang không yêu cầu login
-        http.authorizeRequests().antMatchers("/", "/login", "/logout").permitAll();
+        http.authorizeRequests().antMatchers("/", "/login", "/logout", "/blogs/list").permitAll();
 
         // Trang /userInfo yêu cầu phải login với vai trò ROLE_USER hoặc ROLE_ADMIN.
         // Nếu chưa login, nó sẽ redirect tới trang /login.
-        http.authorizeRequests().antMatchers("/userInfo", "/blogs/list").access("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')");
+        http.authorizeRequests().antMatchers("/userInfo").access("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')");
 
         // Trang chỉ dành cho ADMIN
         http.authorizeRequests().antMatchers("/admin", "/blogs/edit-blog/{id}", "/blogs/showFormCreate", "/blogs/delete").access("hasRole('ROLE_ADMIN')");

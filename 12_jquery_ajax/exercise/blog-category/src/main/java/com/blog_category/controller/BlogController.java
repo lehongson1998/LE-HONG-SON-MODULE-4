@@ -4,15 +4,19 @@ import com.blog_category.model.Blog;
 import com.blog_category.model.Category;
 import com.blog_category.service.IBlogService;
 import com.blog_category.service.ICategoryService;
+import com.blog_category.util.WebUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.security.Principal;
 import java.util.Optional;
 
 @Controller
@@ -27,13 +31,19 @@ public class BlogController {
     public String listBlog(Model model,
                            @PageableDefault(size = 5) Pageable pageable,
                            @RequestParam Optional<String> name,
-                           @RequestParam Optional<String> categoryName){
+                           @RequestParam Optional<String> categoryName,
+                           Principal principal){
         String keyName = name.orElse("");
         String categoryNames = categoryName.orElse("");
         Page<Blog> blogPage = blogService.findAll(keyName, categoryNames, pageable);
         model.addAttribute("blogList", blogPage);
         model.addAttribute("category", categoryService.findAllCategory());
         model.addAttribute("keyVal", keyName);
+        if (principal == null){
+            return "/blog/list";
+        }
+        User loginedUser = (User) ((Authentication) principal).getPrincipal();
+        model.addAttribute("userInfo", loginedUser.getAuthorities());
         return "/blog/list";
     }
 
