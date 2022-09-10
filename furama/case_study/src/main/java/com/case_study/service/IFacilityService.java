@@ -13,6 +13,8 @@ public interface IFacilityService {
 
     List<FacilityType> listFacilityType();
 
+    List<Facility> listFacility();
+
     List<RentType> listRentType();
 
     void saveFacility(Facility facility);

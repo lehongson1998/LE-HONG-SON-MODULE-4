@@ -23,6 +23,7 @@ import java.util.Optional;
 public class FacilityController {
     @Autowired
     private IFacilityService facilityService;
+
     @GetMapping("")
     public ModelAndView home(){
         ModelAndView modelAndView = new ModelAndView("layout/home");

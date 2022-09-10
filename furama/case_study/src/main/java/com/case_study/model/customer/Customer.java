@@ -2,6 +2,7 @@ package com.case_study.model.customer;
 
 import com.case_study.model.Person;
 import com.case_study.model.contract.Contract;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,6 +23,7 @@ public class Customer extends Person {
     @JoinColumn(name = "type_customer_id", referencedColumnName = "typeCustomerId", nullable = false)
     private TypeCustomer typeCustomer;
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+    @JsonBackReference
     private List<Contract> contractList;
 
     public Customer(Long Id, String name, LocalDate dateOfBirth, String idCard, String phoneNumber, String email, String address, boolean gender, TypeCustomer typeCustomer, List<Contract> contractList) {

@@ -11,19 +11,19 @@ import javax.validation.constraints.Pattern;
 import java.time.LocalDate;
 
 public abstract class PersonDto {
-    @NotBlank
+    @NotBlank(message = "* không được để trống trường này" )
     private String name;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dateOfBirth;
-    @NotBlank
+    @NotBlank(message = "* không được để trống trường này" )
     private String idCard;
-    @NotBlank
-    @Pattern(regexp = "^0[1-9]\\d{9}$", message = "Please input right format!")
+    @NotBlank(message = "* không được để trống trường này" )
+    @Pattern(regexp = "^0[1-9]\\d{8,9}$", message = "số điện thoại phải là số việt nam")
     private String phoneNumber;
-    @NotBlank
+    @NotBlank(message = "* không được để trống trường này" )
     @Email
     private String email;
-    @NotBlank
+    @NotBlank(message = "* không được để trống trường này" )
     private String address;
 
     public PersonDto() {

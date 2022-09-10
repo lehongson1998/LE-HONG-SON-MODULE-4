@@ -7,7 +7,7 @@ import java.time.LocalDate;
 public class RegexCustomer {
     public static boolean checkRegexName(CustomerDto customerDto){
         String name = VnCharacterUnit.removeAccent(customerDto.getName());
-        return name.matches("^([A-Z][a-z]+\\s?){1,4}$");
+        return name.matches("^([A-Z][a-z]+\\s?){1,5}$");
     }
 
     public static boolean checkDateOfBirth(CustomerDto customerDto){
@@ -26,6 +26,6 @@ public class RegexCustomer {
 
     public static boolean checkRegexAddress(CustomerDto customerDto){
         String address = VnCharacterUnit.removeAccent(customerDto.getAddress());
-        return address.matches("^[A-Za-z ,]+$");
+        return address.matches("^[A-Za-z0-9 ,/]+$");
     }
 }

@@ -13,7 +13,7 @@ public class VnCharacterUnit {
             'Ỉ', 'ỉ', 'Ị', 'ị', 'Ọ', 'ọ', 'Ỏ', 'ỏ', 'Ố', 'ố', 'Ồ', 'ồ', 'Ổ',
             'ổ', 'Ỗ', 'ỗ', 'Ộ', 'ộ', 'Ớ', 'ớ', 'Ờ', 'ờ', 'Ở', 'ở', 'Ỡ', 'ỡ',
             'Ợ', 'ợ', 'Ụ', 'ụ', 'Ủ', 'ủ', 'Ứ', 'ứ', 'Ừ', 'ừ', 'Ử', 'ử', 'Ữ',
-            'ữ', 'Ự', 'ự',};
+            'ữ', 'Ự', 'ự', 'ỹ', 'Ỹ', 'ỳ', 'Ỳ'};
 
     private static final char[] DESTINATION_CHARACTERS = {'A', 'A', 'A', 'A', 'E',
             'E', 'E', 'I', 'I', 'O', 'O', 'O', 'O', 'U', 'U', 'Y', 'a', 'a',
@@ -25,7 +25,7 @@ public class VnCharacterUnit {
             'e', 'I', 'i', 'I', 'i', 'O', 'o', 'O', 'o', 'O', 'o', 'O', 'o',
             'O', 'o', 'O', 'o', 'O', 'o', 'O', 'o', 'O', 'o', 'O', 'o', 'O',
             'o', 'O', 'o', 'U', 'u', 'U', 'u', 'U', 'u', 'U', 'u', 'U', 'u',
-            'U', 'u', 'U', 'u',};
+            'U', 'u', 'U', 'u', 'y', 'Y', 'y', 'Y'};
 
     public static char removeAccent(char ch) {
         int index = Arrays.binarySearch(SOURCE_CHARACTERS, ch);
@@ -41,5 +41,16 @@ public class VnCharacterUnit {
             sb.setCharAt(i, removeAccent(sb.charAt(i)));
         }
         return sb.toString();
+    }
+
+    public static void main(String[] args) {
+        System.out.println(SOURCE_CHARACTERS.length);
+        System.out.println(DESTINATION_CHARACTERS.length);
+        System.out.println(VnCharacterUnit.removeAccent('ỹ'));
+        for (int i = 0; i < DESTINATION_CHARACTERS.length; i++) {
+            if (DESTINATION_CHARACTERS[i] == 'y'){
+                System.out.println(i);
+            }
+        }
     }
 }

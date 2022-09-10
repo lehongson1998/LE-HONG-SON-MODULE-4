@@ -4,42 +4,51 @@
     <meta charset="UTF-8">
     <title>customer</title>
     <th:block th:replace="~{/layout/home :: cssScript}"></th:block>
+    <style>
+        body {
+            background-image: url("https://img.meta.com.vn/Data/image/2021/09/30/background-la-gi-anh-background-dep-9.png");
+            background-position: bottom right;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+    </style>
 </head>
 <body>
 <nav th:replace="~{/layout/header_footer::header}"></nav>
 <div th:replace="~{/layout/home::carousel}"></div>
 <div class="container">
-    <h1 class="text-center">Page Customer</h1>
+    <h1 class="text-center cac" style="font-family: 'Bell MT'">DANH SÁCH KHÁCH HÀNG</h1>
     <form class="d-flex m-5">
-        <input class="form-control me-2" type="search" placeholder="Search customer name" aria-label="Search"
+        <input class="form-control me-2" type="search" placeholder="tìm theo tên khách hàng" aria-label="Search"
                name="name">
-        <input class="form-control me-2" type="search" placeholder="Search customer type" aria-label="Search"
+        <input class="form-control me-2" type="search" placeholder="tìm theo loại khách hàng" aria-label="Search"
                name="typeCustomer">
         <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
-    <table class="table table-dark">
-        <tr>
+    <table class="table">
+        <tr class="table-success" style="font-family: 'Bell MT'">
             <th>#</th>
-            <th>Full name</th>
-            <th>Date of birth</th>
-            <th>Gender</th>
-            <th>Id Card</th>
-            <th>Phone Number</th>
-            <th>TypeCustomer</th>
-            <th>Address</th>
-            <th><a href="/customer/formCreate"><span class="fa fa-plus-circle fa-2x text-info"></span></a> </th>
+            <th>HỌ TÊN</th>
+            <th>NGÀY SINH</th>
+            <th>GIỚI TÍNH</th>
+            <th>SỐ CMND</th>
+            <th>SỐ ĐIỆN THOẠI</th>
+            <th>LOẠI KHÁCH HÀNG</th>
+            <th>ĐỊA CHỈ</th>
+            <th class="text-center"><a href="/customer/formCreate"><span class="fa fa-plus-circle fa-2x text-info"></span></a> </th>
         </tr>
         <tr th:each="customer, status : ${customerPage}">
             <td th:text="${status.count}"></td>
             <td th:text="${customer.name}"></td>
             <td th:text="${customer.dateOfBirth}"></td>
-            <td th:if="${customer.gender}">Male</td>
-            <td th:unless="${customer.gender}">Female</td>
+            <td th:if="${customer.gender}">Nam</td>
+            <td th:unless="${customer.gender}">Nữ</td>
             <td th:text="${customer.idCard}"></td>
             <td th:text="${customer.phoneNumber}"></td>
             <td th:text="${customer.typeCustomer.typeNameCustomer}"></td>
             <td th:text="${customer.address}"></td>
-            <td>
+            <td class="text-center">
                 <a th:href="@{/customer/formEdit/{id}(id=${customer.id})}">
                     <span class="fa fa-edit fa-1x text-warning"></span>
                 </a>

@@ -33,6 +33,11 @@ public class FacilityService implements IFacilityService {
     }
 
     @Override
+    public List<Facility> listFacility() {
+        return facilityRepository.findAll();
+    }
+
+    @Override
     public List<RentType> listRentType() {
         return rentTypeRepository.findAll();
     }

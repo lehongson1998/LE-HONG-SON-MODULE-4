@@ -3,6 +3,7 @@ package com.case_study.model.contract;
 import com.case_study.model.customer.Customer;
 import com.case_study.model.employee.Employee;
 import com.case_study.model.facility.Facility;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -35,6 +36,7 @@ public class Contract {
     @JoinColumn(name = "facility_id", referencedColumnName = "id")
     private Facility facility;
     @OneToMany(mappedBy = "contract")
+    @JsonBackReference
     private List<ContractDetail> contractDetail;
 
     public Contract(LocalDate startDay, LocalDate endDay, double deposit, Customer customer, Employee employee, Facility facility, List<ContractDetail> contractDetail) {

@@ -65,9 +65,11 @@ public class CustomerController {
         }
         Customer customer = new Customer();
         BeanUtils.copyProperties(customerDto, customer);
+
         TypeCustomer typeCustomer = new TypeCustomer();
         typeCustomer.setTypeCustomerId(customerDto.getTypeCustomerDto().getId());
         customer.setTypeCustomer(typeCustomer);
+
         iCustomerService.saveCustomer(customer);
         redirectAttributes.addFlashAttribute("msg", "create success");
         return "redirect:/customer/list";

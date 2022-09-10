@@ -12,10 +12,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
+
 
 @Service
 public class ContractService implements IContractService {
@@ -27,8 +25,18 @@ public class ContractService implements IContractService {
     private IAttachFacilityRepository attachFacilityRepository;
 
     @Override
-    public Page<Contract> listContract(String facilityName, Pageable pageable) {
-        return contractRepository.findAllByFacility_NameContaining(facilityName, pageable);
+    public Page<Contract> listContract(String facilityName, String customerName, Pageable pageable) {
+        return contractRepository.findAllByFacility_NameContainingAndCustomer_NameContaining(facilityName, customerName, pageable);
+    }
+
+    @Override
+    public Page<Contract> listContract(Pageable pageable) {
+        return contractRepository.findAll(pageable);
+    }
+
+    @Override
+    public List<Contract> findAll() {
+        return contractRepository.findAll();
     }
 
     @Override
@@ -56,4 +64,13 @@ public class ContractService implements IContractService {
         return attachFacilityRepository.findAll();
     }
 
+    @Override
+    public List<ContractDetail> listContractDetail() {
+        return contractDetailRepository.findAll();
+    }
+
+    @Override
+    public List<ContractDetail> listContractDetail(Long contractId) {
+        return contractDetailRepository.findByContract_Id(contractId);
+    }
 }

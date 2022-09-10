@@ -10,6 +10,8 @@ import java.util.List;
 public interface ICustomerService {
     Page<Customer> findAllCustomer(String name, String typeCustomer, Pageable pageable);
 
+    List<Customer> findAllCustomer();
+
     void saveCustomer(Customer customer);
 
     Customer findByIdCustomer(Long id);

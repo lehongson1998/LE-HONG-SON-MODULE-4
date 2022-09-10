@@ -1,5 +1,6 @@
 package com.case_study.model.facility;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,6 +20,7 @@ public class RentType {
     private Long id;
     private String name;
     @OneToMany(mappedBy = "rentType", cascade = CascadeType.ALL)
+    @JsonBackReference
     private List<Facility> facilityList;
 
     public RentType(String name, List<Facility> facilityList) {

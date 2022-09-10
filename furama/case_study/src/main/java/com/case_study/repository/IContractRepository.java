@@ -8,8 +8,10 @@ import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
 
-@Transactional
 @Repository
+@Transactional
 public interface IContractRepository extends JpaRepository<Contract, Long> {
-    Page<Contract> findAllByFacility_NameContaining(String facilityName, Pageable pageable);
+    Page<Contract> findAllByFacility_NameContainingAndCustomer_NameContaining(String facilityName, String customerName, Pageable pageable);
+
+//    Page<Contract> findAll(Pageable pageable);
 }

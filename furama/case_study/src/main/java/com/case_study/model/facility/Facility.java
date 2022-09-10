@@ -1,6 +1,7 @@
 package com.case_study.model.facility;
 
 import com.case_study.model.contract.Contract;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -36,6 +37,7 @@ public class Facility {
     @JoinColumn(name = "rent_type_id", referencedColumnName = "id")
     private RentType rentType;
     @OneToMany(mappedBy = "facility", cascade = CascadeType.ALL)
+    @JsonBackReference
     private List<Contract> contractList;
 
     public Facility(String name, double cost, int maxPeople, int area, String standardRoom, String descriptionOtherConvenience, double poolArea, int numberOfFloors, String facilityFree, FacilityType facilityId, RentType rentType, List<Contract> contractList) {

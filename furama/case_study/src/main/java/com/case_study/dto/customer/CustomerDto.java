@@ -60,28 +60,28 @@ public class CustomerDto extends PersonDto implements Validator {
     public void validate(Object target, Errors errors) {
         CustomerDto customerDto = (CustomerDto) target;
         if (!RegexCustomer.checkRegexName(customerDto)){
-            errors.rejectValue("name", "wrong.create","* Please input right format!");
+            errors.rejectValue("name", "wrong.create","* tên gồm 3 - 4 từ và mỗi từ bắt đầu bằng chữ viết hoa");
         }
         if (customerDto.getDateOfBirth() != null){
             if (!RegexCustomer.checkDateOfBirth(customerDto)){
-                errors.rejectValue("dateOfBirth", "wrong.create","* Please input right format!");
+                errors.rejectValue("dateOfBirth", "wrong.create","* tuổi phải trên 18 và nhỏ hơn hoặc bằng 100");
             }
         }else {
-            errors.rejectValue("dateOfBirth", "wrong.create","* Wrong not blank");
+            errors.rejectValue("dateOfBirth", "wrong.create","* không để rỗng trường này");
         }
         if (!RegexCustomer.checkRegexIdCard(customerDto)){
-            errors.rejectValue("idCard", "wrong.create","* Please input right format!");
+            errors.rejectValue("idCard", "wrong.create","* số CMND phải là số có 9 đến 11 chữ số");
         }
         if (!RegexCustomer.checkRegexAddress(customerDto)){
-            errors.rejectValue("address", "wrong.create","* Please input right format!");
+            errors.rejectValue("address", "wrong.create","* địa chỉ có thể là chữ hoặc số có thể chứa khoảng trắng dấu\',\' dấu \'/\' ko chứa kí tự đặc biệt");
         }
 
         if(customerDto.gender == null){
-            errors.rejectValue("gender", "wrong.create","* Please input not blank");
+            errors.rejectValue("gender", "wrong.create","* không được để trống trường này");
         }
 
         if(customerDto.typeCustomerDto == null){
-            errors.rejectValue("typeCustomerDto", "wrong.create","* Please input not blank");
+            errors.rejectValue("typeCustomerDto", "wrong.create","* không được để trống trường này");
         }
     }
 }
