@@ -1,7 +1,11 @@
 package com.case_study.controlleer;
 
 import com.case_study.dto.facility.FacilityDto;
+import com.case_study.dto.facility.FacilityTypeDto;
+import com.case_study.model.customer.TypeCustomer;
 import com.case_study.model.facility.Facility;
+import com.case_study.model.facility.FacilityType;
+import com.case_study.model.facility.RentType;
 import com.case_study.service.IFacilityService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,17 +54,26 @@ public class FacilityController {
     }
 
     @PostMapping("/create")
-    public String createFacility(@ModelAttribute @Valid FacilityDto facilityDto,
-                                 Model model,
-                                 BindingResult bindingResult){
-        new FacilityDto().validate(facilityDto, bindingResult);
+    public String createFacility(@ModelAttribute @Valid FacilityDto facilityDto, BindingResult bindingResult,
+                                 Model model ){
         model.addAttribute("facilityDto", facilityDto);
         if(bindingResult.hasErrors()){
+            model.addAttribute("facilityType", facilityService.listFacilityType());
+            model.addAttribute("rentType", facilityService.listRentType());
             return "facility/create";
         }
 
         Facility facility = new Facility();
         BeanUtils.copyProperties(facilityDto, facility);
+
+        FacilityType facilityType = new FacilityType();
+        facilityType.setId(facilityDto.getFacilityId().getId());
+        facility.setFacilityId(facilityType);
+
+        RentType rentType = new RentType();
+        rentType.setId(facilityDto.getRentType().getId());
+        facility.setRentType(rentType);
+
         facilityService.saveFacility(facility);
         return "redirect:/facility/list";
     }

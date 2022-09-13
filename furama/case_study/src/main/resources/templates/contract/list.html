@@ -77,7 +77,7 @@
                     <span class="fa fa-angles-left"></span>
                 </a>
                 <span th:text="${contractPage.number + 1}"></span> / <span th:text="${contractPage.totalPages}"></span>
-                <a th:href="@{/contract/list(page=${contractPage.number + 1}, facilityName = ${keyName})}"
+                <a th:href="@{/contract/list(page=${contractPage.number + 1}, facilityName = ${keyName},customerName = ${keyCus} )}"
                    th:if="${contractPage.hasNext()}">
                     <span class="fa fa-angles-right"></span>
                 </a>
@@ -135,13 +135,14 @@
                                     <option value="None">Chọn dịch vụ</option>
                                     <option th:each="fac:${facility}"
                                             th:value="${fac.id}"
-                                            th:text="${fac.name}">
+                                            th:text="${fac.name}"
+                                            id="total">
                                     </option>
                                 </select>
                             </div>
                             <div class="col-md-12">
                                 <label for="total" class="form-label">Tổng tiền</label>
-                                <input type="number" readonly class="form-control" id="total" name="total">
+                                <input type="text" readonly class="form-control" id="total1" name="total">
                             </div>
                             <div class="col-12  mt-2 d-flex justify-content-end">
                                 <button type="button" class="btn btn-secondary me-3" data-bs-dismiss="modal">Hủy bỏ
@@ -290,14 +291,14 @@
                     console.log(listContractDt)
                     let strContract = "";
                     for (let i = 0; i < listContractDt.length; i++) {
-                        strContract = `<tr>
+                        strContract += `<tr>
                                      <td>${listContractDt[i].attachFacility.name}</td>
                                      <td>${listContractDt[i].attachFacility.unit}</td>
                                      <td>${listContractDt[i].attachFacility.cost}</td>
                                      <td>${listContractDt[i].quantity}</td>
                                 </tr>`;
                     }
-                    setInterval('location.reload()', 1000);
+                    setInterval('location.reload()', 3000);
                     $("#divContract").html(strContract);
                 },
                 error: function (resultError) {

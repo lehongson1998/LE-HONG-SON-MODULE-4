@@ -12,6 +12,4 @@ import javax.transaction.Transactional;
 @Transactional
 public interface IContractRepository extends JpaRepository<Contract, Long> {
     Page<Contract> findAllByFacility_NameContainingAndCustomer_NameContaining(String facilityName, String customerName, Pageable pageable);
-
-//    Page<Contract> findAll(Pageable pageable);
 }

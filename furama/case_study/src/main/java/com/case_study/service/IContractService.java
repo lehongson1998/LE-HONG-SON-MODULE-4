@@ -27,6 +27,4 @@ public interface IContractService {
     List<ContractDetail> listContractDetail();
 
     List<ContractDetail> listContractDetail(Long contractId);
-
-
 }

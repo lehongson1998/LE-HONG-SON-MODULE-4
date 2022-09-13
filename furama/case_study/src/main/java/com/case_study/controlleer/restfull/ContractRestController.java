@@ -2,7 +2,9 @@ package com.case_study.controlleer.restfull;
 
 import com.case_study.model.contract.Contract;
 import com.case_study.model.contract.ContractDetail;
+import com.case_study.model.facility.Facility;
 import com.case_study.service.IContractService;
+import com.case_study.service.IFacilityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -24,6 +26,8 @@ public class ContractRestController {
 
     @Autowired
     private IContractService iContractService;
+    @Autowired
+    private IFacilityService facilityService;
 
     @GetMapping("/list/{id}")
     public ResponseEntity<List<ContractDetail>> showList(@PathVariable Long id){
@@ -33,5 +37,15 @@ public class ContractRestController {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         return new ResponseEntity<>(contractDetails,HttpStatus.OK);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Facility> showFacility(@PathVariable Long id){
+        Facility facility = facilityService.findById(id);
+
+        if (facility == null){
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(facility,HttpStatus.OK);
     }
 }
